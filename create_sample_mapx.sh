@@ -30,9 +30,12 @@ do
     SPL=$(abspath ${BAM%.*}.splitters.bam)
     check_file_exists $SPL
 
+    VCF=$(abspath $LUMPY_DIR/$SAMPLE/$SAMPLE.sv.vcf.gz)
+    check_file_exists $VCF
+
     HIST=$(abspath $LUMPY_DIR/$SAMPLE/temp/cnvnator-temp/${BAM##*/}.hist.root)
     check_file_exists $HIST
 
-    echo -e "$SAMPLE\t$BAM\t$SPL\t$HIST"
+    echo -e "$SAMPLE\t$BAM\t$SPL\t$VCF\t$HIST"
 done < $SAMPLE_MAP
 
