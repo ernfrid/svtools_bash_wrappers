@@ -36,6 +36,6 @@ do
     HIST=$(abspath $LUMPY_DIR/$SAMPLE/temp/cnvnator-temp/${BAM##*/}.hist.root)
     check_file_exists $HIST
 
-    echo -e "$SAMPLE\t$BAM\t$SPL\t$VCF\t$HIST"
+    echo -e "$SAMPLE\t$BAM\t$SPL\t$HIST\t$VCF"
 done < $SAMPLE_MAP
 
