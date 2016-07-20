@@ -1,10 +1,10 @@
 #!/bin/bash
 
-set -euo pipefail
+set -eo pipefail
 source setup_svtools.sh
 
 FILE_OF_FILES=$1
-MASTER_VCF=$2
+MASTER_VCF=${2-}
 
 MERGE=''
 if [ "$MASTER_VCF" ]; then
