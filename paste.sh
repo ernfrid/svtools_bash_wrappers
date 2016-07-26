@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eo pipefail
+set -ueo pipefail
 source setup_svtools.sh
 
 FILE_OF_FILES=$1
@@ -11,4 +11,4 @@ if [ "$MASTER_VCF" ]; then
     MERGE="-m $MASTER_VCF"
 fi
 
-svtools vcfpaste $MERGE -q -f $FILE_OF_FILES
+svtools vcfpaste $MERGE -q -f $FILE_OF_FILES | bgzip -c
